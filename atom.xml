@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[TechSwamp]]></title>
   <link href="http://shr1k.github.com/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-01-11T01:49:41+00:00</updated>
+  <updated>2013-01-11T02:05:24+00:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Shrikant Narasimhan]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Post]]></title>
+    <link href="http://shr1k.github.com/blog/2013/01/02/new-post/"/>
+    <updated>2013-01-02T18:54:00+00:00</updated>
+    <id>http://shr1k.github.com/blog/2013/01/02/new-post</id>
+    <content type="html"><![CDATA[<p>This is a test post.</p>
+
+<p><strong>Some bold text</strong>. <em>And then some italics</em>.
+<a href="http://www.google.com">This is linked to a website</a></p>
+
+<!-- more -->
+
+
+<p>Sometimes I run <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code> without asking anyone.</p>
+
+<p>And then all I see is some damn code like so:</p>
+
+<figure class='code'><figcaption><span>Try out some R code</span><a href='http://www.r-bloggers.com/maps-in-r-plotting-data-points-on-a-map/'>Stolen from here</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="n">airports</span> <span class="o">&lt;-</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;http://openflights.svn.sourceforge.net/viewvc/openflights/openflights/data/airports.dat&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="no">FALSE</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="n">colnames</span><span class="p">(</span><span class="n">airports</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;IATA_FAA&quot;</span><span class="p">,</span> <span class="s2">&quot;ICAO&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;timezone&quot;</span><span class="p">,</span> <span class="s2">&quot;DST&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="n">head</span><span class="p">(</span><span class="n">airports</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
 </feed>

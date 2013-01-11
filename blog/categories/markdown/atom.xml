@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Markdown | TechSwamp]]></title>
+  <link href="http://shr1k.github.com/blog/categories/markdown/atom.xml" rel="self"/>
+  <link href="http://shr1k.github.com/"/>
+  <updated>2013-01-11T02:05:24+00:00</updated>
+  <id>http://shr1k.github.com/</id>
+  <author>
+    <name><![CDATA[Shrikant Narasimhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[New Post]]></title>
+    <link href="http://shr1k.github.com/blog/2013/01/02/new-post/"/>
+    <updated>2013-01-02T18:54:00+00:00</updated>
+    <id>http://shr1k.github.com/blog/2013/01/02/new-post</id>
+    <content type="html"><![CDATA[<p>This is a test post.</p>
+
+<p><strong>Some bold text</strong>. <em>And then some italics</em>.
+<a href="http://www.google.com">This is linked to a website</a></p>
+
+<!-- more -->
+
+
+<p>Sometimes I run <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code> without asking anyone.</p>
+
+<p>And then all I see is some damn code like so:</p>
+
+<p>``` ruby Try out some R code http://www.r-bloggers.com/maps-in-r-plotting-data-points-on-a-map/ Stolen from here</p>
+
+<blockquote><p>airports &lt;- read.csv("http://openflights.svn.sourceforge.net/viewvc/openflights/openflights/data/airports.dat", header = FALSE)
+colnames(airports) &lt;- c("ID", "name", "city", "country", "IATA_FAA", "ICAO", "lat", "lon", "altitude", "timezone", "DST")
+head(airports)
+```</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
