@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Raspberry Pi | TechSwamp]]></title>
+  <link href="http://shr1k.github.com/blog/categories/raspberry-pi/atom.xml" rel="self"/>
+  <link href="http://shr1k.github.com/"/>
+  <updated>2013-02-16T10:03:46+00:00</updated>
+  <id>http://shr1k.github.com/</id>
+  <author>
+    <name><![CDATA[Shrikant Narasimhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up a Raspberry Pi-powered headless media server and NAS]]></title>
+    <link href="http://shr1k.github.com/blog/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/"/>
+    <updated>2013-02-16T09:53:00+00:00</updated>
+    <id>http://shr1k.github.com/blog/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas</id>
+    <content type="html"><![CDATA[<p>One of the best gifts I've ever received to date is the <a href="http://i.imgur.com/1PSNV.jpg">End Of The World Survival Kit</a> from my 2012 Reddit Secret Santa. (As an aside, I was so moved by this, that I felt ashamed of taking the easy route of giving my giftee just a T-shirt, and made amends by signing up for re-matching and sending another gift to someone else.)</p>
+
+<p>The best part of the kit was the Raspberry Pi Model B. Recently unemployed and looking for things to do, it was the perfect way to get started on some reasonably techie hobbyism (that's a word now). The only hitch was that I had the board, but no peripherals at all.</p>
+
+<p>Or so I thought.</p>
+
+<!-- more -->
+
+
+<p>The only items really required to get the RPi up and running are:</p>
+
+<ul>
+<li>An SD card reader (which my laptop already had)</li>
+<li>A power supply (for which a BlackBerry charger, or any other microUSB charger, will do just fine)</li>
+<li>An SD card (or microSD card + SD adapter) of 4+ GB</li>
+<li>An Ethernet cable (hello, dusty old Sky router box! What's this left unused inside you for the last 2.5 years?)</li>
+</ul>
+
+
+<p>Beyond these, the other required ingredients of this tasty dish are (and some of these may seem obvious):</p>
+
+<ul>
+<li>A wireless router</li>
+<li>An externally powered USB HDD of a reasonable capacity (500 GB, in my case)</li>
+<li>A reasonable number of wireless 'client' devices (laptops, tablets, smartphones) around the house, just to make the effort worthwhile</li>
+</ul>
+
+
+<p>After this epiphany, getting the whole setup in place was a mere matter of ploughing through the numerous guides published on the interwebs and the odd all-nighter spent figuring out why things didn't work. So here's a quick run-down of the steps involved in -- <em>drum-roll</em> -- setting up a Raspberry Pi-powered headless media server and NAS!</p>
+
+<ol>
+<li><a href="#setup">Set up the Raspberry Pi</a></li>
+<li><a href="#mount">Mount external storage</a></li>
+<li><a href="#server">Install DLNA server</a></li>
+<li><a href="#client">Install DLNA client</a></li>
+<li><a href="#nfs">Setup NFS</a></li>
+</ol>
+
+
+<h2>1. <a id="setup"></a>Set up the Raspberry Pi</h2>
+
+<p>Simply <a href="http://www.raspberrypi.org/downloads">download</a> the image and <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">'burn' it onto the SD card</a>. I picked Raspbian as I use Ubuntu and am familiar with the Debian way of doing things, and am comfortable with <code>dd</code> now (having been burnt a couple of times earlier -- alcohol and <code>/dev/urandom</code> do NOT mix well), and opted for the command-line approach.</p>
+
+<p><img src="http://i.imgur.com/anEtp3W.png" title="Preparing the SD card" ></p>
+
+<p>After you plug the prepared SD card into the RPi and power it on, a quick:</p>
+
+<p><code>ssh -Y pi@&lt;IP address&gt;</code> <em>(using the password "raspberry" without the quotes -- the "-Y" means you can open graphical programs off the RPi on your own screen, but running in the RPi's context)</em></p>
+
+<p>and you're logged in. You can find out the IP address of the RPi by checking your router admin page. I'm not sure if there's another way to do this, but this worked for me.</p>
+
+<p>Once logged in, the first thing to do would be to run the <strong>raspi-config</strong> tool (<code>sudo raspi-config</code>), "<em>Expand Root Partition to Fill SD Card</em>" and reboot (<code>sudo shutdown -r now</code> or <code>sudo reboot</code>). This ensures you're using the full capacity of the SD card.</p>
+
+<p><img src="http://i.imgur.com/4p63pkN.png" title="Expand Root Partition to Fill SD Card" ></p>
+
+<h2>2. <a id="mount"></a>Mount external storage</h2>
+
+<p>After the OS has been set up, updated and is tootling along happily, plug in the USB HDD. This should be externally powered, because the RPi doesn't appear to be able to power USB devices beyond a keyboard or a mouse.</p>
+
+<p>Keep in mind that the standard Raspbian build does not ship with modern NTFS support, so if you have any partitions formatted as NTFS, you will need to <code>sudo apt-get install ntfs-3g</code> to be able to use them properly.</p>
+
+<p>Find the names of the partitions you want to mount (<code>sudo fdisk -l</code>), and mount them.</p>
+
+<p><img src="http://i.imgur.com/xzlqnFx.png" title="The required partition names are listed under &#34;Device Boot&#34;" alt="The required partition names are listed under &#34;Device Boot&#34;"></p>
+
+<p>I don't mind relying on the smarts of Debian to manage this, so a <code>sudo mount -t auto /dev/sda1 /media/audvid</code> should work just fine. Just take care that <code>/dev/sda1</code> and <code>/media/audvid</code> actually exist first.</p>
+
+<h2>3. <a id="server"></a>Install DLNA server</h2>
+
+<p>The nest step is to install a DLNA/UPnP server. The RPi has MiniDLNA readily available in the repositories, so a <code>sudo apt-get install minidlna</code> will suffice.</p>
+
+<p>After it's been downloaded and installed, fire up <code>/etc/minidlna.conf</code>, and edit the line that starts with <code>#media_dir=</code> to point at your freshly mounted HDD locations. You can use multiple lines for different paths and content types.</p>
+
+<p><img src="http://i.imgur.com/MPV0sxk.png" title="Editing minidlna.conf" ></p>
+
+<p>The other values can be left untouched (unless you want to fiddle about, of course).</p>
+
+<p>Follow this up with a <code>sudo service minidlna force-reload</code> to start indexing the new locations. You can follow the progress of this indexing either by tailing the log file with a <code>tail -f /var/log/minidlna.log</code> or pointing your browser at <code>http://&lt;IP address of RPi&gt;:&lt;Port number from minidlna.conf&gt;</code>.</p>
+
+<p><img src="http://i.imgur.com/6ZJddG9.png" title="MiniDLNA indexing progress" ></p>
+
+<p>This could take a while for large media collections, but one way to guess that indexing has completed is if the log file shows a "Parsing playlists..." message.</p>
+
+<p>Note here that any changes made to these 'watched' locations will necessitate a <code>sudo service minidlna force-reload</code>, if the notification options in <code>/etc/minidlna.conf</code> haven't been configured.</p>
+
+<h2>4. <a id="client"></a>Install DLNA client</h2>
+
+<p>So you have a DLNA server, but how do you use it? <a href="http://en.wikipedia.org/wiki/List_of_UPnP_AV_media_servers_and_clients">With a DLNA client, of course</a>! After twiddling with a few options, I settled on the combination of <a href="https://play.google.com/store/apps/details?id=com.bubblesoft.android.bubbleupnp">BubbleUPnP</a> and VLC, which appears to offer the best balance of free and feature-filled amongst the Android clients. All the rest seemed deficient in one way or another.</p>
+
+<p><img class="left" src="http://i.imgur.com/BL0hrya.png" width="294" height="490" title="BubbleUPnP: Select media source" >
+<img class="right" src="http://i.imgur.com/xHuvrQ2.png" width="294" height="490" title="BubbleUPnP: Playing audio" >
+<img src="http://i.imgur.com/v1iTxdL.png" title="BubbleUPnP: Delegating video to VLC" ></p>
+
+<h2>5. <a id="nfs"></a>Setup NFS</h2>
+
+<p>Now what if you need to modify or add to your media library? Futzing around with media metadata and hauling giant files back and forth via DLNA is not possible, and would be too cumbersome over a phone or tablet's interface anyway. Additionally, there doesn't seem to be any sane method of DLNA playback through the Ubuntu desktop.</p>
+
+<p>The best thing to do in this situation remained to mount the media partitions on the USB HDD as network shares. After some consideration of the Samba and NFS approaches, <a href="https://help.ubuntu.com/8.04/serverguide/network-file-system.html">I decided to go for the latter</a>.</p>
+
+<p>Install the NFS server-side components on the RPi using <code>sudo apt-get install nfs-kernel-server</code>, which should also install a package called <code>rpcbind</code>. After this, add the HDD's mounted partitions into the <code>/etc/exports</code> file, save it, and run <code>exportfs -av</code>. Follow this up by restarting the <code>nfs-kernel-server</code> and <code>rpcbind</code> services.</p>
+
+<p>On the client side, do a <code>sudo apt-get install nfs-common</code>, and finally, mount the 'exported' paths by saying <code>sudo mount &lt;IP address&gt;:/media/audvid /home/shrik/Music</code> and the like. If all succeeds, when you run the <code>mount</code> command after this, you should the newly mounted paths at the bottom of the output.</p>
+
+<p><img src="http://i.imgur.com/saHUKcn.png" title="NFS shares mounted successfully" ></p>
+
+<p>At this point, you should be able to make changes in these directories from the client machine, and have these reflected in the RPi.</p>
+
+<p>And there you have it -- a Raspberry Pi running without any I/O peripherals and powering a networked home media centre! I'm not entirely certain how robust this setup will be, but it's been running on a couple of days up-time without any adverse effects so far.</p>
+]]></content>
+  </entry>
+  
+</feed>
