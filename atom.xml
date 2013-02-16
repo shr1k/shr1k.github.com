@@ -4,10 +4,10 @@
   <title><![CDATA[TechSwamp]]></title>
   <link href="http://shr1k.github.com/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-02-16T10:03:46+00:00</updated>
+  <updated>2013-02-16T10:16:00+00:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
-    <name><![CDATA[Shrikant Narasimhan]]></name>
+    <name><![CDATA[Shrikant]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Setting up a Raspberry Pi-powered headless media server and NAS]]></title>
-    <link href="http://shr1k.github.com/blog/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/"/>
+    <link href="http://shr1k.github.com/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/"/>
     <updated>2013-02-16T09:53:00+00:00</updated>
-    <id>http://shr1k.github.com/blog/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas</id>
+    <id>http://shr1k.github.com/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas</id>
     <content type="html"><![CDATA[<p>One of the best gifts I&#8217;ve ever received to date is the <a href="http://i.imgur.com/1PSNV.jpg">End Of The World Survival Kit</a> from my 2012 Reddit Secret Santa. (As an aside, I was so moved by this, that I felt ashamed of taking the easy route of giving my giftee just a T-shirt, and made amends by signing up for re-matching and sending another gift to someone else.)</p>
 
 <p>The best part of the kit was the Raspberry Pi Model B. Recently unemployed and looking for things to do, it was the perfect way to get started on some reasonably techie hobbyism (that&#8217;s a word now). The only hitch was that I had the board, but no peripherals at all.</p>
