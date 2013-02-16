@@ -10,4 +10,4 @@ I'm [Shrikant](https://about.me/shrik), variously known as `shrikant`, `shrik` a
 
 Playing with tech is fun -- I charitably refer to myself as [a hacker](http://www.catb.org/esr/faqs/hacker-howto.html#what_is).
 
-You can catch me lounging about on [Twitter](https://twitter.com/shr1k), [Hacker News](https://news.ycombinator.com/user?id=shrikant), or occasionally, in times of dire need, on [Google+](http://gplus.to/shrik). If you're not a social media sort of person and would like to get in touch to vent/complain/hire/chat/heckle, why don't you [drop me a line the old-fashioned way](http://scr.im/shr1k)?
+You can catch me lounging about on [Twitter](https://twitter.com/shr1k), [Hacker News](https://news.ycombinator.com/user?id=shrikant), or occasionally, in times of dire need, on [Google+](http://gplus.to/shrik). If you would like to get in touch to vent/complain/hire/chat/heckle, why don't you [drop me a line the old-fashioned way](http://scr.im/shr1k)?
