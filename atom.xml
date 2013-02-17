@@ -4,7 +4,7 @@
   <title><![CDATA[TechSwamp]]></title>
   <link href="http://shr1k.github.com/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-02-16T10:21:48+00:00</updated>
+  <updated>2013-02-17T00:58:28+00:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
     <name><![CDATA[Shrikant]]></name>
@@ -59,7 +59,7 @@
 
 <h2>1. <a id="setup"></a>Set up the Raspberry Pi</h2>
 
-<p>Simply <a href="http://www.raspberrypi.org/downloads">download</a> the image and <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">&#8216;burn&#8217; it onto the SD card</a>. I picked Raspbian as I use Ubuntu and am familiar with the Debian way of doing things, and am comfortable with <code>dd</code> now (having been burnt a couple of times earlier &#8211; alcohol and <code>/dev/urandom</code> do NOT mix well), and opted for the command-line approach.</p>
+<p>Simply <a href="http://www.raspberrypi.org/downloads">download</a> the image and <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">&#8216;burn&#8217; it onto the SD card</a>. I picked Raspbian as I use Ubuntu and am familiar with the Debian way of doing things. I&#8217;m also comfortable with <code>dd</code> now (having been burnt a couple of times earlier &#8211; alcohol and <code>/dev/urandom</code> do NOT mix well), and opted for the command-line approach.</p>
 
 <p><img src="http://i.imgur.com/anEtp3W.png" title="Preparing the SD card" ></p>
 
