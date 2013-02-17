@@ -37,7 +37,7 @@ After this epiphany, getting the whole setup in place was a mere matter of ploug
 
 ## 1. <a id="setup"></a>Set up the Raspberry Pi
 
-Simply [download](http://www.raspberrypi.org/downloads) the image and ['burn' it onto the SD card](http://elinux.org/RPi_Easy_SD_Card_Setup). I picked Raspbian as I use Ubuntu and am familiar with the Debian way of doing things, and am comfortable with `dd` now (having been burnt a couple of times earlier -- alcohol and `/dev/urandom` do NOT mix well), and opted for the command-line approach.
+Simply [download](http://www.raspberrypi.org/downloads) the image and ['burn' it onto the SD card](http://elinux.org/RPi_Easy_SD_Card_Setup). I picked Raspbian as I use Ubuntu and am familiar with the Debian way of doing things. I'm also comfortable with `dd` now (having been burnt a couple of times earlier -- alcohol and `/dev/urandom` do NOT mix well), and opted for the command-line approach.
 
 {% img http://i.imgur.com/anEtp3W.png Preparing the SD card %}
 
