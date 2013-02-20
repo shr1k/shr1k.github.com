@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>TechSwamp</title>
+  <title>Suppressing warnings when starting NFS-related services - TechSwamp</title>
   <meta name="author" content="Shrikant">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shr1k.github.com/">
+  <link rel="canonical" href="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,16 +81,13 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/">Suppressing Warnings When Starting NFS-related Services</a></h1>
+      
+        <h1 class="entry-title">Suppressing Warnings When Starting NFS-related Services</h1>
       
     
     
@@ -114,7 +111,7 @@
   </header>
 
 
-  <div class="entry-content"><p>After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re-mounted each time. The sensible thing to do here would obviously be to manage the re-mounting in a bootup script, but until I get around to doing that I mount the HDD manually.</p>
+<div class="entry-content"><p>After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re-mounted each time. The sensible thing to do here would obviously be to manage the re-mounting in a bootup script, but until I get around to doing that I mount the HDD manually.</p>
 
 <p>Since this HDD is used in an NFS share over the network, I also need to export the mount points again and restart the <code>rpcbind</code> and <code>nfs-kernel-server</code> services. I noticed that every time I did this, the latter service would start up alright, but throw out some odd-looking warnings.</p>
 
@@ -149,24 +146,16 @@
 
 <p>Now when you restart <code>nfs-kernel-server</code>, the IPv6-related warnings will be gone!</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/">Setting Up a Raspberry Pi-powered Headless Media Server and NAS</a></h1>
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Shrikant</span></span>
+
       
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -178,36 +167,48 @@
   
 
 
-<time datetime="2013-02-16T09:53:00+00:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-02-19T20:31:00+00:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/raspberry-pi/'>Raspberry Pi</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/" data-via="shr1k" data-counturl="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/" title="Previous Post: Setting up a Raspberry Pi-powered headless media server and NAS">&laquo; Setting up a Raspberry Pi-powered headless media server and NAS</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-  <div class="entry-content"><p>One of the best gifts I&#8217;ve ever received to date is the <a href="http://i.imgur.com/1PSNV.jpg">End Of The World Survival Kit</a> from my 2012 Reddit Secret Santa. (As an aside, I was so moved by this, that I felt ashamed of taking the easy route of giving my giftee just a T-shirt, and made amends by signing up for re-matching and sending another gift to someone else.)</p>
-
-<p>The best part of the kit was the Raspberry Pi Model B. Recently unemployed and looking for things to do, it was the perfect way to get started on some reasonably techie hobbyism (that&#8217;s a word now). The only hitch was that I had the board, but no peripherals at all.</p>
-
-<p>Or so I thought.</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -228,7 +229,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -256,6 +257,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -270,7 +272,10 @@
       var disqus_shortname = 'techswamp';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/';
+        var disqus_url = 'http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

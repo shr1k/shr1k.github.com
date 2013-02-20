@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Raspberry Pi | TechSwamp]]></title>
   <link href="http://shr1k.github.com/blog/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-02-17T00:58:28+00:00</updated>
+  <updated>2013-02-20T00:09:29+00:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
     <name><![CDATA[Shrikant]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Suppressing warnings when starting NFS-related services]]></title>
+    <link href="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/"/>
+    <updated>2013-02-19T20:31:00+00:00</updated>
+    <id>http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services</id>
+    <content type="html"><![CDATA[<p>After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re-mounted each time. The sensible thing to do here would obviously be to manage the re-mounting in a bootup script, but until I get around to doing that I mount the HDD manually.</p>
+
+<p>Since this HDD is used in an NFS share over the network, I also need to export the mount points again and restart the <code>rpcbind</code> and <code>nfs-kernel-server</code> services. I noticed that every time I did this, the latter service would start up alright, but throw out some odd-looking warnings.</p>
+
+<p><code>console
+pi@raspberrypi ~ $ sudo service nfs-kernel-server restart
+[ ok ] Stopping NFS kernel daemon: mountd nfsd.
+[ ok ] Unexporting directories for NFS kernel daemon....
+[ ok ] Exporting directories for NFS kernel daemon....
+[....] Starting NFS kernel daemon: nfsdrpc.nfsd: address family inet6 not supported by protocol UDP
+ mountdrpc.mountd: svc_tli_create: could not bind to requested address
+rpc.mountd: svc_tli_create: could not bind to requested address
+rpc.mountd: svc_tli_create: could not bind to requested address
+. ok
+pi@raspberrypi ~ $
+</code></p>
+
+<p>The solution to this is quite simple - turns out all you need to do is to edit the file <code>/etc/netconfig</code>, which should look something like this:</p>
+
+<p><img src="http://i.imgur.com/Xmx1Ogv.png"></p>
+
+<p>Just comment out the lines that begin with <code>udp6</code> and <code>tcp</code> by prefixing each line with a '#', and save the file. (Note that you need to be root or use <code>sudo</code> to do this.)</p>
+
+<p>Now when you restart <code>nfs-kernel-server</code>, the IPv6-related warnings will be gone!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setting up a Raspberry Pi-powered headless media server and NAS]]></title>
