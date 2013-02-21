@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Suppressing warnings when starting NFS-related services - TechSwamp</title>
+  <title>Category: Nexus 7 - TechSwamp</title>
   <meta name="author" content="Shrikant">
 
   
-  <meta name="description" content="After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re- &hellip;">
+  <meta name="description" content="Category: Nexus 7">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/">
+  <link rel="canonical" href="http://shr1k.github.comblog/categories/nexus-7/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -82,132 +82,36 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      
-        <h1 class="entry-title">Suppressing Warnings When Starting NFS-related Services</h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-19T20:31:00+00:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Nexus 7</h1>
     
   </header>
-
-
-<div class="entry-content"><p>After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re-mounted each time. The sensible thing to do here would obviously be to manage the re-mounting in a bootup script, but until I get around to doing that I mount the HDD manually.</p>
-
-<p>Since this HDD is used in an NFS share over the network, I also need to export the mount points again and restart the <code>rpcbind</code> and <code>nfs-kernel-server</code> services. I noticed that every time I did this, the latter service would start up alright, but throw out some odd-looking warnings.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">pi@raspberrypi ~ $ sudo service nfs-kernel-server restart</span>
-</span><span class='line'><span class="go">[ ok ] Stopping NFS kernel daemon: mountd nfsd.</span>
-</span><span class='line'><span class="go">[ ok ] Unexporting directories for NFS kernel daemon....</span>
-</span><span class='line'><span class="go">[ ok ] Exporting directories for NFS kernel daemon....</span>
-</span><span class='line'><span class="go">[....] Starting NFS kernel daemon: nfsdrpc.nfsd: address family inet6 not supported by protocol UDP</span>
-</span><span class='line'><span class="go"> mountdrpc.mountd: svc_tli_create: could not bind to requested address</span>
-</span><span class='line'><span class="go">rpc.mountd: svc_tli_create: could not bind to requested address</span>
-</span><span class='line'><span class="go">rpc.mountd: svc_tli_create: could not bind to requested address</span>
-</span><span class='line'><span class="go">. ok </span>
-</span><span class='line'><span class="go">pi@raspberrypi ~ $ </span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The solution to this is quite simple - turns out all you need to do is to edit the file <code>/etc/netconfig</code>, which should look something like this:</p>
-
-<p><img src="http://i.imgur.com/Xmx1Ogv.png"></p>
-
-<p>Just comment out the lines that begin with <code>udp6</code> and <code>tcp</code> by prefixing each line with a &#8216;#&#8217;, and save the file. (Note that you need to be root or use <code>sudo</code> to do this.)</p>
-
-<p>Now when you restart <code>nfs-kernel-server</code>, the IPv6-related warnings will be gone!</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Shrikant</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2013</h2>
+
+<article>
+  
+<h1><a href="/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/">Ubuntu Touch Developer Preview: A First Look for the Nexus 7</a></h1>
+<time datetime="2013-02-21T20:32:00+00:00" pubdate><span class='month'>Feb</span> <span class='day'>21</span> <span class='year'>2013</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/nexus-7/'>Nexus 7</a>, <a class='category' href='/blog/categories/ubuntu/'>Ubuntu</a>, <a class='category' href='/blog/categories/ubuntu-touch/'>Ubuntu Touch</a></span>
+</footer>
 
 
-<time datetime="2013-02-19T20:31:00+00:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/raspberry-pi/'>Raspberry Pi</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/" data-via="shr1k" data-counturl="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/" title="Previous Post: Setting up a Raspberry Pi-powered headless media server and NAS">&laquo; Setting up a Raspberry Pi-powered headless media server and NAS</a>
-      
-      
-        <a class="basic-alignment right articlenav" href="/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/" title="Next Post: Ubuntu Touch Developer Preview: A First Look for the Nexus 7">Ubuntu Touch Developer Preview: A First Look for the Nexus 7 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -278,10 +182,7 @@
       var disqus_shortname = 'techswamp';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/';
-        var disqus_url = 'http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

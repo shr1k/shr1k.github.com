@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Nexus 7 | TechSwamp]]></title>
+  <link href="http://shr1k.github.com/blog/categories/nexus-7/atom.xml" rel="self"/>
+  <link href="http://shr1k.github.com/"/>
+  <updated>2013-02-21T20:46:29+00:00</updated>
+  <id>http://shr1k.github.com/</id>
+  <author>
+    <name><![CDATA[Shrikant]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu Touch Developer Preview: A First Look for the Nexus 7]]></title>
+    <link href="http://shr1k.github.com/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/"/>
+    <updated>2013-02-21T20:32:00+00:00</updated>
+    <id>http://shr1k.github.com/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7</id>
+    <content type="html"><![CDATA[<p>The <a href="https://wiki.ubuntu.com/Touch/ReleaseNotes">Ubuntu Touch Developer Preview</a> landed today and I was really excited to see it available for my Nexus 7. Following the <a href="https://wiki.ubuntu.com/Touch/Install">really simply install instructions</a>, I was ready to go in less than 30 minutes (and most of that time was just waiting for the OS images to download).</p>
+
+<!-- more -->
+
+
+<h2>Lock-screen and home-screens</h2>
+
+<p>The first signs of Ubuntu is the heavily Unity flavoured lock-screen that greets you on booting up. I was a little puzzled by the "14 tweets received" message, but it turns out that it is just a placeholder image.</p>
+
+<p><img class="center" src="http://i.imgur.com/lLoPPkg.png"></p>
+
+<h2></h2>
+
+<p>Swiping left or right from the screen edge in the lock-screen takes you to the central home-screen (of five in total). Scrolling and swiping are nice and smooth (with a noticeable stutter when running quite a few apps)</p>
+
+<p><img class="center" src="http://i.imgur.com/vcccQr0.png"></p>
+
+<h2></h2>
+
+<p>Swiping left or right in middle of the home-screen navigates between the other home-screens (taking care to stay away from the edges of the screen, as it does something else entirely)</p>
+
+<p><img class="center" src="http://i.imgur.com/Ki8BVvA.png"></p>
+
+<p>I really hope that the list of "People" that Canonical have set up (all of whom appear to be Canonical employees) have only fake contact details and messaging histories pre-populated in for them, because everyone's phone number is visible, and there's a lot of other potentially personally-identifying information in there.</p>
+
+<h2></h2>
+
+<p>Swiping left from a home-screen brings up the much maligned Unity launcher.</p>
+
+<p><img class="center" src="http://i.imgur.com/SS2Hx3Q.png"></p>
+
+<h2>Notification area</h2>
+
+<p>There is a notification area on the top right with indicators for messaging, volume control, Wifi, battery status and the time. The notification swipe-down bar is not a unified one a la Android or Symbian<sup>3,</sup> but you have to target each tiny icon to bring down its own configuration options. The screenshot below shows the swipe-down options for the time indicator.</p>
+
+<p><img class="center" src="http://i.imgur.com/FA9wY62.png"></p>
+
+<h2>Apps</h2>
+
+<p>The "Apps" home-screen shows the list of "Running", "Frequently Used", "Installed", and "Available for Download" apps in their respective groups.</p>
+
+<p><img class="center" src="http://i.imgur.com/sCcBKOf.png"></p>
+
+<h2></h2>
+
+<p>That this is a developer preview is heavily reinforced by the fact that most of the apps are in fact just placeholders and do (nearly) nothing. The calculator and weather apps, for instance, don't do anything at all and are just static images.</p>
+
+<p><img class="left" src="http://i.imgur.com/svmgHqu.png">
+<img class="right" src="http://i.imgur.com/hVJLbTb.png"></p>
+
+<h2></h2>
+
+<p>There are a few other apps (Amazon, eBay, Gmail) that are essentially the iPhone-optimised versions of the websites wrapped in a browser-frame. The browser appears to be a WebKit container that spits out a Safari 5.1 / iOS user-agent.</p>
+
+<p><img class="center" src="http://i.imgur.com/n4LHcVH.png"></p>
+
+<p>But it is somewhat functional, and you can navigate to websites by swiping from the bottom screen edge.</p>
+
+<p><img class="center" src="http://i.imgur.com/fGtF8TF.png"></p>
+
+<p>Some of the (barely) functional native apps are the Notepad and the Photo Gallery. The Notepad loses any created notes on rebooting, but the Photo Gallery is surprisingly functional, with some basic image editing functions like cropping, resizing and enhancing already in place. All these features work quite alright as well.</p>
+
+<p><img class="left" src="http://i.imgur.com/03Y5jjF.png"></p>
+
+<p><img class="right" src="http://i.imgur.com/k88jZeR.png"></p>
+
+<h2></h2>
+
+<p>Swiping up from the bottom screen-edge of every app brings up a set of context-relevant options. Interestingly, a "longer" swipe from the same area brings up a little lens icon, which if targeted, presents a more generic set of actions.</p>
+
+<p><img class="center" src="http://i.imgur.com/QiRIYYj.png"></p>
+
+<p>There appears to be a bug in its implementation as it stands right now -- I brought this up when in the Calculator app, but it is showing some actions that only apply to photos, like "Share", "Delete", and "Add". However, the "X" icon in the bottom row is the way to exit a running app.</p>
+
+<h2>Keyboard</h2>
+
+<p>Oddly enough, the buggiest part of the entire release currently appears to be the keyboard.</p>
+
+<p><img class="center" src="http://i.imgur.com/0TRXCFI.png"></p>
+
+<p>It is clearly not built for tablets yet, is difficult to use, and generally 'misbehaves' at times. It would keep changing focus to the wrong text-box in the browser, and when I was playing around with the People app, the keyboard decided it never wanted to leave the screen. This was only resolved by a reboot.</p>
+
+<h2>Conclusions</h2>
+
+<p>I am currently only testing out the release for the Nexus 7, so I'm not in a position to test the camera or the phone-related features like calling or texting. The Nexus 4 is my primary phone, and not really a candidate for experimentation at this stage.</p>
+
+<p>What's next? I guess Canonical will put their nose to the grindstone on this and start churning out functional <a href="https://wiki.ubuntu.com/Touch/CoreApps">core apps</a>. Since this is the first Developer Preview I'm ever playing around with, I couldn't really say if it is a GREAT start, but it certainly sets the stage quite nicely in terms of what to expect. Given that the entire effort essentially appears to amount to <a href="https://wiki.ubuntu.com/Touch/Contribute#Source_code">integrating the existing Ubuntu codebase with CyanogenMod</a>, I'm quite positive that the Canonical team will put out an excellent product.</p>
+]]></content>
+  </entry>
+  
+</feed>
