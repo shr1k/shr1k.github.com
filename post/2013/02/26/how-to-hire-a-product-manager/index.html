@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Suppressing warnings when starting NFS-related services - TechSwamp</title>
+  <title>How to hire a product manager - TechSwamp</title>
   <meta name="author" content="Shrikant">
 
   
-  <meta name="description" content="After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re- &hellip;">
+  <meta name="description" content="Product management may be the one job that the organization would get along fine without (at least for a good while). Without engineers, nothing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/">
+  <link rel="canonical" href="http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -87,8 +87,8 @@
   <header>
     
       
-        <h1 class="entry-title">Suppressing Warnings When Starting NFS-related Services</h1>
-      
+        <h1 class="entry-title external"><a href="https://www.kennethnorton.com/essays/productmanager.html">How to Hire a Product Manager <span>&rArr;</span></a></h1>
+        
     
     
       <p class="meta">
@@ -104,47 +104,14 @@
   
 
 
-<time datetime="2013-02-19T20:31:00+00:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+<time datetime="2013-02-26T20:43:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re-mounted each time. The sensible thing to do here would obviously be to manage the re-mounting in a bootup script, but until I get around to doing that I mount the HDD manually.</p>
-
-<p>Since this HDD is used in an NFS share over the network, I also need to export the mount points again and restart the <code>rpcbind</code> and <code>nfs-kernel-server</code> services. I noticed that every time I did this, the latter service would start up alright, but throw out some odd-looking warnings.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">pi@raspberrypi ~ $ sudo service nfs-kernel-server restart</span>
-</span><span class='line'><span class="go">[ ok ] Stopping NFS kernel daemon: mountd nfsd.</span>
-</span><span class='line'><span class="go">[ ok ] Unexporting directories for NFS kernel daemon....</span>
-</span><span class='line'><span class="go">[ ok ] Exporting directories for NFS kernel daemon....</span>
-</span><span class='line'><span class="go">[....] Starting NFS kernel daemon: nfsdrpc.nfsd: address family inet6 not supported by protocol UDP</span>
-</span><span class='line'><span class="go"> mountdrpc.mountd: svc_tli_create: could not bind to requested address</span>
-</span><span class='line'><span class="go">rpc.mountd: svc_tli_create: could not bind to requested address</span>
-</span><span class='line'><span class="go">rpc.mountd: svc_tli_create: could not bind to requested address</span>
-</span><span class='line'><span class="go">. ok </span>
-</span><span class='line'><span class="go">pi@raspberrypi ~ $ </span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The solution to this is quite simple - turns out all you need to do is to edit the file <code>/etc/netconfig</code>, which should look something like this:</p>
-
-<p><img src="http://i.imgur.com/Xmx1Ogv.png"></p>
-
-<p>Just comment out the lines that begin with <code>udp6</code> and <code>tcp</code> by prefixing each line with a &#8216;#&#8217;, and save the file. (Note that you need to be root or use <code>sudo</code> to do this.)</p>
-
-<p>Now when you restart <code>nfs-kernel-server</code>, the IPv6-related warnings will be gone!</p>
+<div class="entry-content"><blockquote><p>Product management may be the one job that the organization would get along fine without (at least for a good while). Without engineers, nothing would get built. Without sales people, nothing is sold. Without designers, the product looks like crap. But in a world without PMs, everyone simply fills in the gap and goes on with their lives. It&#8217;s important to remember that - as a PM, you&#8217;re expendable. Now, in the long run great product management usually makes the difference between winning and losing, but you have to prove it. Product management also combines elements of lots of other specialties - engineering, design, marketing, sales, business development. Product management is a weird discipline full of oddballs and rejects that never quite fit in anywhere else.</p></blockquote>
 </div>
 
 
@@ -167,12 +134,12 @@
   
 
 
-<time datetime="2013-02-19T20:31:00+00:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+<time datetime="2013-02-26T20:43:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/raspberry-pi/'>Raspberry Pi</a>
+    <a class='category' href='/blog/categories/hiring/'>Hiring</a>, <a class='category' href='/blog/categories/product-management/'>Product Management</a>
   
 </span>
 
@@ -181,7 +148,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/" data-via="shr1k" data-counturl="http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager/" data-via="shr1k" data-counturl="http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -194,10 +161,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/" title="Previous Post: Setting up a Raspberry Pi-powered headless media server and NAS">&laquo; Setting up a Raspberry Pi-powered headless media server and NAS</a>
+        <a class="basic-alignment left articlenav" href="/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/" title="Previous Post: Ubuntu Touch Developer Preview: A First Look for the Nexus 7">&laquo; Ubuntu Touch Developer Preview: A First Look for the Nexus 7</a>
       
-      
-        <a class="basic-alignment right articlenav" href="/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/" title="Next Post: Ubuntu Touch Developer Preview: A First Look for the Nexus 7">Ubuntu Touch Developer Preview: A First Look for the Nexus 7 &raquo;</a>
       
     </p>
   </footer>
@@ -287,8 +252,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/';
-        var disqus_url = 'http://shr1k.github.com/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/';
+        var disqus_identifier = 'http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager/';
+        var disqus_url = 'http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager/';
         var disqus_script = 'embed.js';
       
     (function () {

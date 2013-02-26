@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hiring | TechSwamp]]></title>
+  <link href="http://shr1k.github.com/blog/categories/hiring/atom.xml" rel="self"/>
+  <link href="http://shr1k.github.com/"/>
+  <updated>2013-02-26T21:03:18+00:00</updated>
+  <id>http://shr1k.github.com/</id>
+  <author>
+    <name><![CDATA[Shrikant]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to hire a product manager]]></title>
+    <link href="http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager/"/>
+    <updated>2013-02-26T20:43:00+00:00</updated>
+    <id>http://shr1k.github.com/post/2013/02/26/how-to-hire-a-product-manager</id>
+    <content type="html"><![CDATA[<blockquote><p>Product management may be the one job that the organization would get along fine without (at least for a good while). Without engineers, nothing would get built. Without sales people, nothing is sold. Without designers, the product looks like crap. But in a world without PMs, everyone simply fills in the gap and goes on with their lives. It's important to remember that - as a PM, you're expendable. Now, in the long run great product management usually makes the difference between winning and losing, but you have to prove it. Product management also combines elements of lots of other specialties - engineering, design, marketing, sales, business development. Product management is a weird discipline full of oddballs and rejects that never quite fit in anywhere else.</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
