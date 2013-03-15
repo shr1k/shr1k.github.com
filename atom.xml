@@ -4,7 +4,7 @@
   <title><![CDATA[TechSwamp]]></title>
   <link href="http://shr1k.github.com/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-03-06T20:13:35+00:00</updated>
+  <updated>2013-03-15T14:11:51+00:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
     <name><![CDATA[Shrikant]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Google Reader's forced euthanasia]]></title>
+    <link href="http://shr1k.github.com/post/2013/03/15/google-readers-forced-euthanasia/"/>
+    <updated>2013-03-15T12:41:00+00:00</updated>
+    <id>http://shr1k.github.com/post/2013/03/15/google-readers-forced-euthanasia</id>
+    <content type="html"><![CDATA[<p>Like many others, I was pretty badly struck in the face by the announcement of the Google reader shutdown.</p>
+
+<p>Since I&#8217;m a techie, but not really a developer, a lot of the other Google properties being shut down hadn&#8217;t impacted me as much.</p>
+
+<p>However, a majority of my Internet content consumption is driven by Reader, which is why it was utterly baffling that the reasoning given was &#8221;<a href="http://googlereader.blogspot.co.uk/2013/03/powering-down-google-reader.html">usage of Google Reader has declined</a>&#8221;, especially given some of the <a href="http://www.buzzfeed.com/jwherrman/google-reader-still-sends-far-more-traffic-than-google">rough userbase data</a> that have <a href="http://googlesystem.blogspot.co.uk/2013/03/google-reader-data-points.html">popped up</a>. I wonder where Google gets their data from.</p>
+
+<h3>Embrace, extend, extinguish</h3>
+
+<p>RSS is a great content consumption protocol that is fully open and interoperable. Despite the <a href="http://techcrunch.com/2011/10/20/google-reader-getting-overhauled-removing-your-friends/">&#8220;+isation&#8221; of Reader (or The Great Reader Redesign)</a> (or maybe in part <em>because</em> of it), I had assumed Google would remain committed to at least maintaining Reader, even no resources were being thrown at improving it. Especially since they had thrown their weight behind <a href="http://code.google.com/p/pubsubhubbub/">PubSubHubbub</a>, and bought FeedBurner. (Embrace!)</p>
+
+<p>But having done this, Reader then essentially crowded out the entire market for RSS readers by just existing as a Google gorilla. For the most part, it appeared to be good. I was a staunch user of Bloglines for the longest time, until it stagnated, and then I played around with a few offline readers before jumping ship to Reader. Reader was the exciting new player &#8211; constantly innovating, adding new features, being fast to load, and with a great mobile interface. This went on till it effectively powered most of the popular &#8220;alternative&#8221; readers (Reeder, FeedDemon, Feedly) that relied on its (admittedly undocumented and private) API. (Extend!)</p>
+
+<p>But now, it appears to me that the real reason for pulling the rug out form underneath the many millions of users was the second one they mentioned, saying &#8220;as a company we’re pouring all of our energy into fewer products&#8221;. This unfortunately smacks pretty hard of Google trying to dictate the direction of the web by trying to foist Google+ onto everyone. (Extinguish!)</p>
+
+<h3>What&#8217;s next on the block?</h3>
+
+<p>Given that <a href="http://googleblog.blogspot.co.uk/2013/03/a-second-spring-of-cleaning.html">in the same announcement</a>, they also announced that they&#8217;re killing off CalDAV API access to favour their own proprietary Calendar API, I can&#8217;t help but agree with The Guardian tech blogger Ruper Goodwin:</p>
+
+<blockquote><p>The corporate surprise adds to the decision itself to paint a picture of a company dangerously adrift from a real understanding of its audience, and the information ecosystem.</p></blockquote>
+
+<p>What I just don&#8217;t get is that Google serves up ads perfectly fine when people use FeedBurner, and now they&#8217;re killing off the biggest FeedBurner client? They&#8217;ve already killed its API, and the FeedBurner site still carries the pre-Google+ design. This clearly points towards them killing off FeedBurner as well. It&#8217;s more or less official &#8211; Google hates RSS.</p>
+
+<h3>The alternatives</h3>
+
+<p>Most people are suggesting Flipboard and Feedly as alternatives, but they either really don&#8217;t get it, or their needs have diverged from the usual RSS reading crowd.</p>
+
+<p>I detest things trying to learn my preferences, because my reading preferences change all the time. Sometimes I ignore a feed for 2 weeks, then catch up on all of it. Sometimes, I read every item from a source every time it&#8217;s published. I don&#8217;t want my preferences shaped by algorithms, as it always feels like I&#8217;m missing out on something. This is als why I pretty much <strong>never</strong> touched the &#8220;Sort by magic&#8221; option in Google Reader.</p>
+
+<p>Additionally, magazine and river style just don&#8217;t cut it. I&#8217;m not reading a magazine or a social news site &#8211; what I need is an inbox of site updates. Whether the source is a news site, personal blog or webcomic is irrelevant, I just want to see how many updates are there, and which ones remain to be read. And horror of horrors, if I don&#8217;t want to read something, I just skip it! I would prefer to not have the cognitive load of figuring out which was the last XKCD or Penny Arcade post I read, and how many I have missed over a period of being offline or plain busy. <a href="http://threads2.scripting.com/2013/march/goodbyeGoogleReader">Dave Winer is missing the point</a> &#8211; even though the tool may be called a &#8220;news reader&#8221;, it really is an &#8220;RSS reader&#8221;.</p>
+
+<p>The RSS reading alternatives doing the rounds currently are <a href="http://www.netvibes.com/">NetVibes</a>, <a href="http://www.bloglines.com/">Bloglines</a> (which is now just a skin of NetVibes), <a href="http://theoldreader.com/">The Old Reader</a>, <a href="http://www.newsblur.com/">NewsBlur</a>, and self-hosted options like <a href="http://tt-rss.org/">Tiny Tiny RSS</a> and <a href="http://selfoss.aditu.de/">selfoss</a>.</p>
+
+<p>Or I could get off my lazy behind and attempt to build my own. The only problem with that is that I&#8217;ll probably end up hosting it on App Engine. Argh!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to hire a product manager]]></title>
