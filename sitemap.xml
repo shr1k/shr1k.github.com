@@ -33,12 +33,18 @@
         <lastmod>2013-03-23T01:32:34+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://shr1k.github.com/post/2013/04/01/analytics-syndication-service-paradigm-shift-align-core-competencies/
+        </loc>
+        <lastmod>2013-04-02T13:51:04+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://shr1k.github.com/robots.txt</loc>
         <lastmod>2013-01-11T02:34:25+00:00</lastmod>
     </url>
     <url>
         <loc>http://shr1k.github.com/blog/archives/</loc>
-        <lastmod>2013-03-23T01:32:34+00:00</lastmod>
+        <lastmod>2013-04-02T13:51:04+01:00</lastmod>
     </url>
     <url>
         <loc>http://shr1k.github.com/about/</loc>
@@ -46,6 +52,6 @@
     </url>
     <url>
         <loc>http://shr1k.github.com/</loc>
-        <lastmod>2013-03-23T01:32:34+00:00</lastmod>
+        <lastmod>2013-04-02T13:51:04+01:00</lastmod>
     </url>
 </urlset>
