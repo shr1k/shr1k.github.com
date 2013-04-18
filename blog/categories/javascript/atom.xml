@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JavaScript | TechSwamp]]></title>
+  <link href="http://shr1k.github.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://shr1k.github.com/"/>
+  <updated>2013-04-18T11:49:08+01:00</updated>
+  <id>http://shr1k.github.com/</id>
+  <author>
+    <name><![CDATA[Shrikant]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Collection of JS Visualisation Libraries]]></title>
+    <link href="http://shr1k.github.com/post/2013/04/18/a-collection-of-js-visualisation-libraries/"/>
+    <updated>2013-04-18T11:36:00+01:00</updated>
+    <id>http://shr1k.github.com/post/2013/04/18/a-collection-of-js-visualisation-libraries</id>
+    <content type="html"><![CDATA[<p>Just a quick post to make a collective note of some of the few graphing libraries I am attempting to try out over the coming weeks. Base frameworks like D3.js and Raphael.js appear great, but might just be involve too much work if all I want to do is throw together a quick few visualisations.</p>
+
+<p><strong><a href="http://nickqizhu.github.io/dc.js/">dc.js</a></strong>: A multi-dimensional charting library built to work natively with crossfilter and rendered using D3.js.</p>
+
+<p><strong><a href="https://github.com/novus/nvd3">NVD3</a></strong>: Re-usable charts and chart components for D3.js.</p>
+
+<p><strong><a href="https://github.com/polychart/polychart2">Polychart2.js</a></strong>: Graphing library that takes many ideas from the Grammar of Graphics and the R library ggplot2, and adds interactive elements for usage on the Web.</p>
+
+<p><strong><a href="http://www.highcharts.com/download">Highcharts</a></strong>: Interactive charting library supporting many, MANY types of visualisation!</p>
+
+<p><strong><a href="https://github.com/nnnick/Chart.js">Chart.js</a></strong>: Simple HTML5 Charts using the canvas element. Currently doesn't support interactivity, but looks great.</p>
+
+<p><strong><a href="http://www.flotcharts.org/">Flot</a></strong>: Plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
+
+<p><strong><a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a></strong>: JS toolkit for creating interactive time series graphs.</p>
+
+<p><strong><a href="http://yuilibrary.com/yui/docs/charts/">YUI Charts</a></strong>: A charting module based on the YUI library.</p>
+
+<p><strong><a href="http://tenxer.github.io/xcharts/">xCharts</a></strong>: Yet another D3.js based library. Some of the examples don't appear to work currently.</p>
+
+<p><strong><a href="https://github.com/HumbleSoftware/Flotr2">Flotr2</a></strong>: A fork of Flotr which removes the dependency on Prototype and a few enhancements.</p>
+
+<p>Now it may turn out that most of these end up going unused, but hopefully that means I would have found the best fit library and will stick with it!</p>
+]]></content>
+  </entry>
+  
+</feed>
