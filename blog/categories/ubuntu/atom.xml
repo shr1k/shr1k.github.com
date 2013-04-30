@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ubuntu | TechSwamp]]></title>
   <link href="http://shr1k.github.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-04-18T11:49:08+01:00</updated>
+  <updated>2013-04-30T20:04:03+01:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
     <name><![CDATA[Shrikant]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The single best reason to upgrade from Ubuntu 12.10 to 13.04]]></title>
+    <link href="http://shr1k.github.com/post/2013/04/26/the-single-best-reason-to-upgrade-from-ubuntu-12-dot-10-to-13-dot-04/"/>
+    <updated>2013-04-26T08:10:00+01:00</updated>
+    <id>http://shr1k.github.com/post/2013/04/26/the-single-best-reason-to-upgrade-from-ubuntu-12-dot-10-to-13-dot-04</id>
+    <content type="html"><![CDATA[<p>I quite like the Unity interface. I don't really get the hate for it around the interwebs, and it seems like most of it is driven by a resistance to change.</p>
+
+<p>However, my single biggest annoyance with Unity had been the odd way it handles switching between multiple windows of the same application.</p>
+
+<p>Previously, you would have to click on the application icon in the launcher, and if you had multiple windows open, it would show you an Exposé-style view of the windows, and you would have to select one of them.</p>
+
+<p><img class="center" src="http://i.imgur.com/jq2kUHZ.png"></p>
+
+<p>This behaviour was even applied in the Alt+Tab switcher! This made switching between same-app windows a colossal pain, as what was previously practically instantaneous had now become bit of a chore.</p>
+
+<p>Now with Raring Ringtail dropping, this has been fixed.</p>
+
+<p><img class="center" src="http://i.imgur.com/Fng1XOM.png"></p>
+
+<p>You can switch between windows much faster by right-clicking the app icon in the launcher, where the options now include a window listing.</p>
+
+<p>While Unity overall feel a lot snappier and includes some subtle visual refreshes, this is the one killer "fix" that makes the upgrade to 13.04 completely worth the minimal effort involved!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu Touch Developer Preview: A First Look for the Nexus 7]]></title>
