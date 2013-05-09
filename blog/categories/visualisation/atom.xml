@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Visualisation | TechSwamp]]></title>
   <link href="http://shr1k.github.com/blog/categories/visualisation/atom.xml" rel="self"/>
   <link href="http://shr1k.github.com/"/>
-  <updated>2013-05-02T09:38:35+01:00</updated>
+  <updated>2013-05-09T16:17:01+01:00</updated>
   <id>http://shr1k.github.com/</id>
   <author>
     <name><![CDATA[Shrikant]]></name>
@@ -22,13 +22,13 @@
 
 <p><strong><a href="http://nickqizhu.github.io/dc.js/">dc.js</a></strong>: A multi-dimensional charting library built to work natively with crossfilter and rendered using D3.js.</p>
 
-<p><strong><a href="https://github.com/novus/nvd3">NVD3</a></strong>: Re-usable charts and chart components for D3.js.</p>
+<p><strong><a href="https://github.com/novus/nvd3/">NVD3</a></strong>: Re-usable charts and chart components for D3.js.</p>
 
-<p><strong><a href="https://github.com/polychart/polychart2">Polychart2.js</a></strong>: Graphing library that takes many ideas from the Grammar of Graphics and the R library ggplot2, and adds interactive elements for usage on the Web.</p>
+<p><strong><a href="https://github.com/polychart/polychart2/">Polychart2.js</a></strong>: Graphing library that takes many ideas from the Grammar of Graphics and the R library ggplot2, and adds interactive elements for usage on the Web.</p>
 
-<p><strong><a href="http://www.highcharts.com/download">Highcharts</a></strong>: Interactive charting library supporting many, MANY types of visualisation!</p>
+<p><strong><a href="http://www.highcharts.com/download/">Highcharts</a></strong>: Interactive charting library supporting many, MANY types of visualisation!</p>
 
-<p><strong><a href="https://github.com/nnnick/Chart.js">Chart.js</a></strong>: Simple HTML5 Charts using the canvas element. Currently doesn't support interactivity, but looks great.</p>
+<p><strong><a href="https://github.com/nnnick/Chart.js/">Chart.js</a></strong>: Simple HTML5 Charts using the canvas element. Currently doesn't support interactivity, but looks great.</p>
 
 <p><strong><a href="http://www.flotcharts.org/">Flot</a></strong>: Plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
 
