@@ -54,13 +54,25 @@
         <loc>
             http://shr1k.github.com/post/2013/05/09/a-collection-of-great-podcasts-part-1-of-4-news-analysis/
         </loc>
-        <lastmod>2013-05-14T16:43:22+01:00</lastmod>
+        <lastmod>2013-06-19T11:32:40+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://shr1k.github.com/post/2013/05/14/a-collection-of-great-podcasts-part-2-of-4-quizzes/
         </loc>
-        <lastmod>2013-05-14T16:43:21+01:00</lastmod>
+        <lastmod>2013-06-19T11:33:51+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://shr1k.github.com/post/2013/06/03/a-collection-of-great-podcasts-part-3-of-4-entertainment/
+        </loc>
+        <lastmod>2013-06-19T11:33:49+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://shr1k.github.com/post/2013/06/03/a-collection-of-great-podcasts-part-4-of-4-science-and-technology/
+        </loc>
+        <lastmod>2013-06-19T11:33:45+01:00</lastmod>
     </url>
     <url>
         <loc>http://shr1k.github.com/robots.txt</loc>
@@ -68,7 +80,7 @@
     </url>
     <url>
         <loc>http://shr1k.github.com/blog/archives/</loc>
-        <lastmod>2013-05-14T16:43:22+01:00</lastmod>
+        <lastmod>2013-06-19T11:33:51+01:00</lastmod>
     </url>
     <url>
         <loc>http://shr1k.github.com/about/</loc>
@@ -76,6 +88,6 @@
     </url>
     <url>
         <loc>http://shr1k.github.com/</loc>
-        <lastmod>2013-05-14T16:43:22+01:00</lastmod>
+        <lastmod>2013-06-19T11:33:51+01:00</lastmod>
     </url>
 </urlset>

@@ -9,7 +9,7 @@
   <meta name="author" content="Shrikant">
 
   
-  <meta name="description" content="One of the best gifts I&#8217;ve ever received to date is the End Of The World Survival Kit from my 2012 Reddit Secret Santa. (As an aside, I was so &hellip;">
+  <meta name="description" content="The Ubuntu Touch Developer Preview landed today and I was really excited to see it available for my Nexus 7. Following the really simply install &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +90,122 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/">Ubuntu Touch Developer Preview: A First Look for the Nexus 7</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-21T20:32:00+00:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The <a href="https://wiki.ubuntu.com/Touch/ReleaseNotes">Ubuntu Touch Developer Preview</a> landed today and I was really excited to see it available for my Nexus 7. Following the <a href="https://wiki.ubuntu.com/Touch/Install">really simply install instructions</a>, I was ready to go in less than 30 minutes (and most of that time was just waiting for the OS images to download).</p>
+
+<p><strong>Quick note</strong>: Please read the <a href="https://wiki.ubuntu.com/Touch/ReleaseNotes#Nexus_7">known issues with the Nexus 7</a> build before asking questions in <a href="http://webchat.freenode.net/?channels=ubuntu-phone">#ubuntu-phone</a>, as they cover some problems you might notice right away.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/post/2013/02/21/ubuntu-touch-developer-preview-a-first-look-for-the-nexus-7/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/post/2013/02/19/suppressing-warnings-when-starting-nfs-related-services/">Suppressing Warnings When Starting NFS-related Services</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-19T20:31:00+00:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After restarting the Raspberry Pi and the attached paraphernalia every once in a while, the USB HDD that forms the backbone of my NAS needs to be re-mounted each time. The sensible thing to do here would obviously be to manage the re-mounting in a bootup script, but until I get around to doing that I mount the HDD manually.</p>
+
+<p>Since this HDD is used in an NFS share over the network, I also need to export the mount points again and restart the <code>rpcbind</code> and <code>nfs-kernel-server</code> services. I noticed that every time I did this, the latter service would start up alright, but throw out some odd-looking warnings.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">pi@raspberrypi ~ $ sudo service nfs-kernel-server restart</span>
+</span><span class='line'><span class="go">[ ok ] Stopping NFS kernel daemon: mountd nfsd.</span>
+</span><span class='line'><span class="go">[ ok ] Unexporting directories for NFS kernel daemon....</span>
+</span><span class='line'><span class="go">[ ok ] Exporting directories for NFS kernel daemon....</span>
+</span><span class='line'><span class="go">[....] Starting NFS kernel daemon: nfsdrpc.nfsd: address family inet6 not supported by protocol UDP</span>
+</span><span class='line'><span class="go"> mountdrpc.mountd: svc_tli_create: could not bind to requested address</span>
+</span><span class='line'><span class="go">rpc.mountd: svc_tli_create: could not bind to requested address</span>
+</span><span class='line'><span class="go">rpc.mountd: svc_tli_create: could not bind to requested address</span>
+</span><span class='line'><span class="go">. ok </span>
+</span><span class='line'><span class="go">pi@raspberrypi ~ $ </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The solution to this is quite simple - turns out all you need to do is to edit the file <code>/etc/netconfig</code>, which should look something like this:</p>
+
+<p><img src="http://i.imgur.com/Xmx1Ogv.png"></p>
+
+<p>Just comment out the lines that begin with <code>udp6</code> and <code>tcp</code> by prefixing each line with a &#8216;#&#8217;, and save the file. (Note that you need to be root or use <code>sudo</code> to do this.)</p>
+
+<p>Now when you restart <code>nfs-kernel-server</code>, the IPv6-related warnings will be gone!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
         <h1 class="entry-title"><a href="/post/2013/02/16/setting-up-a-raspberry-pi-powered-headless-media-server-and-nas/">Setting Up a Raspberry Pi-powered Headless Media Server and NAS</a></h1>
       
     
@@ -146,6 +262,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/post/2013/06/03/a-collection-of-great-podcasts-part-4-of-4-science-and-technology/">A Collection of Great Podcasts - Part 4 of 4: Science &amp; Technology</a>
+      </li>
+    
+      <li class="post">
+        <a href="/post/2013/06/03/a-collection-of-great-podcasts-part-3-of-4-entertainment/">A Collection of Great Podcasts - Part 3 of 4: Entertainment</a>
+      </li>
+    
+      <li class="post">
         <a href="/post/2013/05/14/a-collection-of-great-podcasts-part-2-of-4-quizzes/">A Collection of Great Podcasts - Part 2 of 4: Quizzes</a>
       </li>
     
@@ -157,19 +281,11 @@
         <a href="/post/2013/04/26/the-single-best-reason-to-upgrade-from-ubuntu-12-dot-10-to-13-dot-04/">The single best reason to upgrade from Ubuntu 12.10 to 13.04</a>
       </li>
     
-      <li class="post">
-        <a href="/post/2013/04/18/a-collection-of-js-visualisation-libraries/">A Collection of JS Visualisation Libraries</a>
-      </li>
-    
-      <li class="post">
-        <a href="/post/2013/04/01/analytics-syndication-service-paradigm-shift-align-core-competencies/">Analytics Syndication Services: A paradigm shift to align your core competencies</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/a2z'>A2Z (1)</a></li><li><a href='/blog/categories/analytics'>Analytics (2)</a></li><li><a href='/blog/categories/attempted-satire'>Attempted Satire (1)</a></li><li><a href='/blog/categories/collections'>Collections (2)</a></li><li><a href='/blog/categories/google'>Google (1)</a></li><li><a href='/blog/categories/hiring'>Hiring (1)</a></li><li><a href='/blog/categories/javascript'>JavaScript (1)</a></li><li><a href='/blog/categories/nexus-7'>Nexus 7 (1)</a></li><li><a href='/blog/categories/podcast'>Podcast (1)</a></li><li><a href='/blog/categories/product-management'>Product Management (1)</a></li><li><a href='/blog/categories/raspberry-pi'>Raspberry Pi (2)</a></li><li><a href='/blog/categories/ubuntu'>Ubuntu (2)</a></li><li><a href='/blog/categories/ubuntu-touch'>Ubuntu Touch (1)</a></li><li><a href='/blog/categories/visualisation'>Visualisation (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/a2z'>A2Z (1)</a></li><li><a href='/blog/categories/analytics'>Analytics (2)</a></li><li><a href='/blog/categories/attempted-satire'>Attempted Satire (1)</a></li><li><a href='/blog/categories/collections'>Collections (5)</a></li><li><a href='/blog/categories/google'>Google (1)</a></li><li><a href='/blog/categories/hiring'>Hiring (1)</a></li><li><a href='/blog/categories/javascript'>JavaScript (1)</a></li><li><a href='/blog/categories/nexus-7'>Nexus 7 (1)</a></li><li><a href='/blog/categories/podcast'>Podcast (4)</a></li><li><a href='/blog/categories/product-management'>Product Management (1)</a></li><li><a href='/blog/categories/raspberry-pi'>Raspberry Pi (2)</a></li><li><a href='/blog/categories/ubuntu'>Ubuntu (2)</a></li><li><a href='/blog/categories/ubuntu-touch'>Ubuntu Touch (1)</a></li><li><a href='/blog/categories/visualisation'>Visualisation (1)</a></li></ul>
 </section>
 
 <section>
